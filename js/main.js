@@ -19,6 +19,10 @@
     const links = document.getElementById('navLinks');
     if (links) links.classList.toggle('open');
   }
+  function closeMenu() {
+  const links = document.getElementById('navLinks');
+  if (links) links.classList.remove('open');
+  }
 
   let lastScrollY = 0;
   window.addEventListener('scroll', () => {
