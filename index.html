@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tuscaloosa Premier 1,000 — TP1K</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ═══════════ NAV ═══════════ -->
+<nav id="mainNav">
+  <div class="nav-logo" onclick="showPage('home')" style="display:flex;align-items:center;padding:4px 0;">
+    <img src="assets/image_png_001.png" alt="TP1K — Inspiring Philanthropy"
+      style="height:48px;width:auto;object-fit:contain;">
+  </div>
+  <ul class="nav-links">
+    <li><a onclick="showPage('home')" data-page="home">Home</a></li>
+    <li><a onclick="showPage('about')" data-page="about">About</a></li>
+<li><a onclick="showPage('grants')" data-page="grants">Grants</a></li>
+    <li><a onclick="showPage('media')" data-page="media">Media</a></li>
+    <li><a onclick="showPage('faq')" data-page="faq">FAQ</a></li>
+<li><a onclick="showPage('involve')" data-page="involve">Get Involved</a></li>
+  </ul>
+  <a href="#" onclick="openDonateModal();return false;" class="nav-donate">Donate</a>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="navLinks">
+  <a href="#" onclick="showPage('home');closeMenu();return false;">Home</a>
+  <a href="#" onclick="showPage('about');closeMenu();return false;">About</a>
+  <a href="#" onclick="showPage('grants');closeMenu();return false;">Grants</a>
+  <a href="#" onclick="showPage('media');closeMenu();return false;">Media</a>
+  <a href="#" onclick="showPage('faq');closeMenu();return false;">FAQ</a>
+  <a href="#" onclick="showPage('involve');closeMenu();return false;">Get Involved</a>
+  <a href="#" onclick="openDonateModal();closeMenu();return false;">Donate</a>
+</div>
+
+<!-- ═══════════ HOME ═══════════ -->
+<div id="page-home" class="page active">
+
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-inner">
+
+      <!-- LEFT: headline + content -->
+      <div class="hero-left">
+        <div class="hero-eyebrow">Tuscaloosa, Alabama · Est. 2025</div>
+        <h1 class="hero-headline">
+          Making<br>
+          <span class="sky">Philanthropy</span><br>
+          <span class="rose">Casual</span><br>
+          Again.
+        </h1>
+        <p class="hero-tagline">
+          Philanthropy is more than charity — it is the love of others, an ethic and culture we are building together in Tuscaloosa.
+        </p>
+        <div class="hero-ctas">
+          <a href="#" onclick="openDonateModal();return false;" class="btn-primary">Donate Now</a>
+          <button class="btn-outline" onclick="showPage('about')">Our Story</button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><div class="stat-num">$4,200</div><div class="stat-label">First Grant Awarded</div></div>
+          <div class="stat"><div class="stat-num">1,000</div><div class="stat-label">Our Community Goal</div></div>
+          <div class="stat"><div class="stat-num">2025</div><div class="stat-label">Year Founded</div></div>
+        </div>
+      </div>
+
+      <!-- RIGHT: official TP1K logo -->
+      <div class="hero-right">
+        <div class="hero-logo-wrap" style="padding:20px 0;">
+          <img src="assets/image_png_001.png" alt="TP1K — Inspiring Philanthropy"
+            style="width:100%;height:auto;display:block;">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="home-mission">
+    <div class="section-eyebrow">Our Mission</div>
+    <div class="home-mission-grid">
+      <div class="home-prose">
+        <h2 class="section-title">A Seat at<br>the Table</h2>
+        <p>Through our partnership with the Community Foundation of West Alabama, we bring thoughtful students and intentional business leaders together to pool their resources, energy, and ideas toward Tuscaloosa's greatest needs.</p>
+        <p>Every participant has a seat at the table — because your intellectual contribution to the conversation is just as valuable as your financial one. That's what it means to <em>inspire philanthropy.</em></p>
+        <button class="btn-primary" onclick="showPage('about')" style="margin-top:8px;">Read Our Story</button>
+      </div>
+      <div class="quote-block">
+        <blockquote>"Thank you, Zachary Goldman, for setting a great example for our young people. When we say our mission is to encourage charitable giving, we understand that applies to all ages."</blockquote>
+        <div class="quote-attribution">— Glenn Taylor, President &amp; CEO, Community Foundation of West Alabama</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-model">
+    <div class="section-eyebrow reveal">How It Works</div>
+    <h2 class="section-title">The Model</h2>
+    <div class="model-explorer">
+      <div class="model-steps-nav">
+        <button class="model-step-tab active" onclick="setModelStep(0)" id="model-tab-0">
+          <div class="model-tab-num">01</div>
+          <div class="model-tab-label">Gather</div>
+        </button>
+        <button class="model-step-tab" onclick="setModelStep(1)" id="model-tab-1">
+          <div class="model-tab-num">02</div>
+          <div class="model-tab-label">Give</div>
+        </button>
+        <button class="model-step-tab" onclick="setModelStep(2)" id="model-tab-2">
+          <div class="model-tab-num">03</div>
+          <div class="model-tab-label">Vote</div>
+        </button>
+      </div>
+      <div class="model-panel active" id="model-panel-0">
+        <div>
+          <div class="model-panel-num">01</div>
+          <div class="model-panel-title">Gather</div>
+          <button class="model-panel-cta" onclick="setModelStep(1)">Next: Give &rarr;</button>
+        </div>
+        <div>
+          <p class="model-panel-body">Students, faculty, staff, and community leaders come together to hear directly from local nonprofit leaders about Tuscaloosa's most pressing needs. Every voice in the room matters.</p>
+          <div class="model-panel-detail">We hold events at unique spaces across Tuscaloosa — not just on campus. We want members to explore and genuinely connect with the city they're giving back to.</div>
+          <div class="model-progress">
+            <div class="model-progress-dot active" onclick="setModelStep(0)"></div>
+            <div class="model-progress-dot" onclick="setModelStep(1)"></div>
+            <div class="model-progress-dot" onclick="setModelStep(2)"></div>
+          </div>
+        </div>
+      </div>
+      <div class="model-panel" id="model-panel-1">
+        <div>
+          <div class="model-panel-num">02</div>
+          <div class="model-panel-title">Give</div>
+          <button class="model-panel-cta" onclick="setModelStep(2)">Next: Vote &rarr;</button>
+        </div>
+        <div>
+          <p class="model-panel-body">Attendees contribute whatever they feel moved to give — any amount. Every gift is pooled through the Community Foundation of West Alabama and is fully tax-deductible.</p>
+          <div class="model-panel-detail">There is no minimum. A gift of $5 and a gift of $500 carry the same weight in the room. The '1,000' in TP1K is a community goal, not a price of admission.</div>
+          <div class="model-progress">
+            <div class="model-progress-dot" onclick="setModelStep(0)"></div>
+            <div class="model-progress-dot active" onclick="setModelStep(1)"></div>
+            <div class="model-progress-dot" onclick="setModelStep(2)"></div>
+          </div>
+        </div>
+      </div>
+      <div class="model-panel" id="model-panel-2">
+        <div>
+          <div class="model-panel-num">03</div>
+          <div class="model-panel-title">Vote</div>
+          <button class="model-panel-cta" onclick="setModelStep(0)">Start over &#x21BA;</button>
+        </div>
+        <div>
+          <p class="model-panel-body">Together, the community votes on which nonprofit receives the pooled funds. Your presence in the conversation is every bit as important as the size of your donation.</p>
+          <div class="model-panel-detail">Recipients are chosen democratically — by every person in the room. The donors themselves direct where the money goes, creating a direct conversation between givers and the communities they serve.</div>
+          <div class="model-progress">
+            <div class="model-progress-dot" onclick="setModelStep(0)"></div>
+            <div class="model-progress-dot" onclick="setModelStep(1)"></div>
+            <div class="model-progress-dot active" onclick="setModelStep(2)"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-grant">
+    <div class="section-eyebrow reveal">Latest Impact</div>
+    <h2 class="section-title reveal reveal-delay-1">Our First Award</h2>
+    <div class="grant-feature reveal reveal-delay-2">
+      <div>
+        <div class="grant-amount" data-slot-id="slot-home" data-target="4200"><span class="grant-amount-prefix">$</span><span class="slot-digit-wrap"><span class="slot-digit-inner" id="sd-0-slot-home"><span class="slot-digit-char">0</span></span></span><span class="slot-digit-wrap"><span class="slot-digit-inner" id="sd-1-slot-home"><span class="slot-digit-char">0</span></span></span><span class="slot-digit-wrap"><span class="slot-digit-inner" id="sd-2-slot-home"><span class="slot-digit-char">0</span></span></span><span class="slot-digit-wrap"><span class="slot-digit-inner" id="sd-3-slot-home"><span class="slot-digit-char">0</span></span></span></div>
+        <div class="grant-year">Inaugural Award · 2026</div>
+      </div>
+      <div>
+        <div class="grant-org-name"><a href="https://thehousetuscaloosa.wordpress.com" target="_blank" style="color:inherit;text-decoration:none;border-bottom:3px solid var(--accent);padding-bottom:2px;transition:border-color 0.2s;">The House Tuscaloosa</a></div>
+        <p class="grant-desc">A literacy center, community bookstore, and afterschool program for middle schoolers — The House Tuscaloosa was our community's first choice. Their federal funding was frozen in early 2025, making this award especially timely.</p>
+        <button onclick="showPage('grants')" class="btn-primary" style="border:none;">View Full Grant →</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ── How to Give ── -->
+  <div class="how-to-give-section">
+    <div class="how-to-give-inner">
+      <div>
+        <h2 class="how-to-give-heading reveal">Ready to<br><span>Contribute?</span></h2>
+        <p class="how-to-give-sub">Contributions made outside of a TP1K event serve as matching funds during our next gathering — and every dollar is always directed toward the greatest community need. Want a direct say in where your money goes? Join us at an event.</p>
+      </div>
+      <div>
+        <ol class="how-to-give-steps">
+          <li class="how-to-give-step">
+            <div class="step-num">1</div>
+            <div class="step-text">Visit <strong><a href="https://donorbox.org/support-cfwa" target="_blank" style="color:var(--sky);">donorbox.org/support-cfwa</a></strong> — or click <strong>Donate</strong> above</div>
+          </li>
+          <li class="how-to-give-step">
+            <div class="step-num">2</div>
+            <div class="step-text">Enter your donation amount and payment info</div>
+          </li>
+          <li class="how-to-give-step">
+            <div class="step-num">3</div>
+            <div class="step-text">In the <strong style="color:var(--sky);">"Write us a comment"</strong> field, type: <strong style="color:white;">Tuscaloosa Premier 1000</strong></div>
+          </li>
+          <li class="how-to-give-step">
+            <div class="step-num">4</div>
+            <div class="step-text">Submit — you'll receive a tax-deductible receipt from CFWA</div>
+          </li>
+        </ol>
+        <a href="#" onclick="openDonateModal();return false;" class="how-to-give-cta">Give Now →</a>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /home -->
+
+
+<!-- ═══════════ ABOUT ═══════════ -->
+<div id="page-about" class="page">
+
+  <div class="about-hero">
+    <div style="display:grid;grid-template-columns:1fr auto;gap:60px;align-items:center;">
+      <div>
+        <div class="ph-eyebrow" style="font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;display:flex;align-items:center;gap:10px;">
+          <span style="width:26px;height:2px;background:var(--accent);display:block;"></span>About TP1K
+        </div>
+        <h1>Inspiring<br><span>Philanthropy</span><br>in Tuscaloosa.</h1>
+        <p class="about-hero-sub">Bringing every voice to the table — because who we listen to matters as much as how much we give.</p>
+      </div>
+      <!-- Official TP1K logo -->
+      <div style="width:220px;flex-shrink:0;">
+        <img src="assets/image_png_001.png" alt="TP1K — Inspiring Philanthropy" style="width:100%;height:auto;display:block;">
+      </div>
+    </div>
+  </div>
+
+  <div class="about-body">
+    <div class="about-grid">
+
+      <div>
+        <div class="section-eyebrow">Our Mission</div>
+        <div class="about-prose">
+          <p>Philanthropy is more than just charity; it is the love of others — an ethic and culture we hope to instill in Tuscaloosa. Through our partnership with the Community Foundation of West Alabama, we aim to make philanthropy casual again by bringing thoughtful students and intentional business leaders together to pool their resources, energy, and ideas.</p>
+          <p>Tuscaloosa Premier 1,000 is a <strong>giving circle</strong> — a community of individuals invested in Tuscaloosa's growth, convened to discuss the city's most pressing needs and act together. We believe in <strong>inspiring philanthropy</strong>: every person has a seat at the table, because your intellectual contribution to the conversation is just as valuable as your financial one.</p>
+          <p>The "1,000" in our name isn't a dollar amount. It's a people goal: 1,000 individuals united in a shared commitment to this community — students, faculty, business owners, neighbors — anyone who cares about Tuscaloosa belongs here.</p>
+        </div>
+        <div class="about-pull-quote">
+          "We want to be able to pass this off once we graduate and have it continue to grow."
+          <br><br><span style="font-style:normal;font-size:13px;letter-spacing:0.1em;text-transform:uppercase;font-family:'Barlow Condensed',sans-serif;font-weight:700;color:var(--accent);">— Zach Goldman, Co-Founder</span>
+        </div>
+        <div class="cfwa-badge">
+          <div class="cfwa-badge-icon">🤝</div>
+          <div class="cfwa-badge-text">
+            <h4>Our Fiscal Partner</h4>
+            <p>All donations to TP1K are processed through the <strong>Community Foundation of West Alabama</strong> — a four-star Charity Navigator–rated public charity serving West Alabama since 1999. Every gift is fully tax-deductible.</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="section-eyebrow">The Origin</div>
+        <div class="about-prose">
+          <p>TP1K was born in the Randall Lab at UA’s Honors Hall — a place where, as Zach put it, “conversations always turn into actions.” Zach had grown up watching adults run giving circles with friends — small groups pooling money, debating causes, and deciding together where it would go. He wanted to bring that model to a campus that had never seen it.</p>
+          <p>To build it right, he and Raeed sought out the people who knew philanthropy at scale. They sat down with <strong>Bob Pierce</strong>, Vice President for Advancement, and <strong>Bobby Prince</strong>, Associate Vice President for Development — the leadership team behind the <em>Rising Tide 2.0</em> campaign, the most successful higher education capital campaign in Alabama history, which surpassed its $1.8 billion goal fifteen months ahead of schedule.</p>
+          <p>With support from the Division of Community Affairs, Zach and Raeed presented TP1K on an “entrepreneurship panel” at the Division’s Board of Advisors annual meeting. Afterward, they sat with <strong>Dr. Samory T. Pruitt</strong>, Vice President for Community Affairs, to think through scaling. It was Dr. Pruitt who offered the reframe that became central to the mission: rather than treating “1,000” as a donation minimum, think of it as a people goal — 1,000 members united by a shared commitment to Tuscaloosa. No price of admission. Just shared purpose.</p>
+          <p>In Spring 2025, they launched. By 2026, Rylen Dempsey — a civic leader with deep community development experience — had joined as co-director, and the inaugural giving event had awarded $4,200 to The House Tuscaloosa. The long-term goal is a permanent community fund: growing deeper roots in Tuscaloosa before growing wider ones anywhere else. Every year, the community decides where the money goes.</p>
+        </div>
+        <div class="quote-block" style="margin-top:40px;">
+          <blockquote>“There isn’t really a student-led giving circle in Tuscaloosa, nor many philanthropic initiatives with this much flexibility. The donors themselves can vote and have a discourse with each other about where they want the money to go.”</blockquote>
+          <div class="quote-attribution">— Raeed Kabir, Co-Founder</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+  <!-- ── Team Leadership (merged) ── -->
+  <div style="background:var(--sky-light); padding:72px 80px 80px;">
+    <div style="max-width:900px;margin:0 auto;">
+      <div class="section-eyebrow">Leadership</div>
+      <h2 class="section-title">The Team</h2>
+      <p style="margin-bottom:48px;color:var(--text-muted);font-style:italic;">Three University of Alabama students building a new model for community philanthropy in Tuscaloosa.</p>
+    </div>
+  <div class="team-section">
+    <div class="team-grid">
+
+      <div class="team-card reveal">
+        <div class="team-photo" style="background:#C5E3F0;">
+          <img src="assets/image_jpg_001.jpg" alt="Zach Goldman" style="width:100%;height:100%;object-fit:contain;background:#f5f5f5;">
+        </div>
+        <div class="team-info">
+          <div class="team-name">Zach Goldman</div>
+          <div class="team-title">Co-Founder &amp; Co-Director</div>
+          <div class="team-award">UA Outstanding Junior '26</div>
+          <ul class="team-bio-bullets">
+            <li>Physics major, Mathematics minor — University of Alabama, Class of 2027</li>
+            <li>Randall Research Scholars Program — neurogenetics &amp; biophysics research on Drosophila seizure models</li>
+            <li>Co-Founder &amp; Executive Director, Bama Fundravers — a DJ-driven nonprofit fundraising collective that raised over $110,000 for student organizations and nonprofits across 3 university campuses in 2025</li>
+            <li>Finance &amp; Fundraising Head, UA Médecins Sans Frontières — led $16k+ fundraising campaign for a 30-student India medical outreach mission</li>
+            <li>UA Seed Grant recipient (with Raeed Kabir) — Whitfield Program</li>
+            <li>Volunteer, Habitat for Humanity and UA Medicine and Community</li>
+            <li>Worked as a pharmacy manager at a rural free clinic in high school, learning firsthand the role of grant writing and fundraising in delivering community care</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="team-card reveal reveal-delay-1">
+        <div class="team-photo" style="background:#C8E8CC;">
+          <img src="assets/image_jpg_002.jpg" alt="Raeed Kabir" style="width:100%;height:100%;object-fit:contain;background:#f5f5f5;">
+        </div>
+        <div class="team-info">
+          <div class="team-name">Raeed Kabir</div>
+          <div class="team-title">Co-Founder &amp; Co-Director</div>
+          <div class="team-award">UA Outstanding Junior '25</div>
+          <ul class="team-bio-bullets">
+            <li>Mathematics &amp; Economics double major, pre-medicine track — University of Alabama</li>
+            <li>Randall Research Scholars Program</li>
+            <li>UA Seed Grant recipient (with Zach Goldman) — Whitfield Program</li>
+            <li>Research with UA and Harvard professors on how uncertainty affects philanthropic giving and the role of empathy in shaping public policy</li>
+            <li>Counselor, UA Student Government Association Judicial Board — connected the SGA network with charitable causes across Tuscaloosa</li>
+            <li>Ernest F. Hollings Undergraduate Scholar — one of 120 selected nationally; research internship at NOAA's Low Earth Orbit Group on environmental health economics</li>
+            <li>Research collaborations at Harvard Business School, University of Chicago, and Harvard University — behavioral economics experiments, public policy, and causal inference</li>
+
+          </ul>
+        </div>
+      </div>
+
+      <div class="team-card reveal reveal-delay-2">
+        <div class="team-photo" style="background:#DDD0EE;">
+          <img src="assets/image_webp_001.webp" alt="Rylen Dempsey" style="width:100%;height:100%;object-fit:contain;background:#f5f5f5;">
+        </div>
+        <div class="team-info">
+          <div class="team-name">Rylen Dempsey</div>
+          <div class="team-title">Co-Director</div>
+          <div class="team-award">Shelby Scholar</div>
+          <ul class="team-bio-bullets">
+            <li>Interdisciplinary Studies — University of Alabama, Class of 2027</li>
+            <li>Chief Administrative Officer, UA Student Government Association</li>
+            <li>Blackburn Institute Fellow</li>
+            <li>Intern, Walker Area Community Foundation — rural economic empowerment and community asset mapping</li>
+            <li>Intern, Tuscaloosa County Industrial Development Authority</li>
+            <li>Director of Youth Engagement, Mayor Randall Woodfin re-election campaign (Birmingham)</li>
+            <li>Digital staffer, President Biden's Inaugural Committee</li>
+            <li>Birmingham native committed to talent retention and investment in Alabama</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  </div>
+
+
+  <!-- ── Ready to Give ── -->
+  <div class="how-to-give-section">
+    <div class="how-to-give-inner">
+      <div>
+        <h2 class="how-to-give-heading reveal">Ready to<br><span>Contribute?</span></h2>
+        <p class="how-to-give-sub">Contributions made outside of a TP1K event serve as matching funds during our next gathering — and every dollar is always directed toward the greatest community need. Want a direct say in where your money goes? Join us at an event.</p>
+      </div>
+      <div>
+        <ol class="how-to-give-steps">
+          <li class="how-to-give-step">
+            <div class="step-num">1</div>
+            <div class="step-text">Visit <strong><a href="https://donorbox.org/support-cfwa" target="_blank" style="color:var(--sky);">donorbox.org/support-cfwa</a></strong> — or click <strong>Donate</strong> above</div>
+          </li>
+          <li class="how-to-give-step">
+            <div class="step-num">2</div>
+            <div class="step-text">Enter your donation amount and payment info</div>
+          </li>
+          <li class="how-to-give-step">
+            <div class="step-num">3</div>
+            <div class="step-text">In the <strong style="color:var(--sky);">“Write us a comment”</strong> field, type: <strong style="color:white;">Tuscaloosa Premier 1000</strong></div>
+          </li>
+          <li class="how-to-give-step">
+            <div class="step-num">4</div>
+            <div class="step-text">Submit — you’ll receive a tax-deductible receipt from CFWA</div>
+          </li>
+        </ol>
+        <a href="#" onclick="openDonateModal();return false;" class="how-to-give-cta">Give Now →</a>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /about -->
+
+
+<!-- ═══════════ GRANTS ═══════════ -->
+<div id="page-grants" class="page">
+
+  <div class="page-header">
+    <div class="ph-eyebrow"><span style="width:26px;height:2px;background:var(--accent);display:block;"></span>Our Impact</div>
+    <h1>Community<br><span>Grants</span></h1>
+    <p>Every dollar pooled by our community, directed by our community.</p>
+  </div>
+
+  <div class="grants-section">
+    <div class="section-eyebrow">2026 · Inaugural Award</div>
+    <div class="grant-feature reveal reveal-delay-2">
+      <div>
+        <div class="grant-amount" data-slot-id="slot-grants" data-target="4200"><span class="grant-amount-prefix">$</span><span class="slot-digit-wrap"><span class="slot-digit-inner" id="sd-0-slot-grants"><span class="slot-digit-char">0</span></span></span><span class="slot-digit-wrap"><span class="slot-digit-inner" id="sd-1-slot-grants"><span class="slot-digit-char">0</span></span></span><span class="slot-digit-wrap"><span class="slot-digit-inner" id="sd-2-slot-grants"><span class="slot-digit-char">0</span></span></span><span class="slot-digit-wrap"><span class="slot-digit-inner" id="sd-3-slot-grants"><span class="slot-digit-char">0</span></span></span></div>
+        <div class="grant-year">Inaugural Award · January 2026</div>
+      </div>
+      <div>
+        <div class="grant-org-name"><a href="https://thehousetuscaloosa.wordpress.com" target="_blank" style="color:inherit;text-decoration:none;border-bottom:3px solid var(--accent);padding-bottom:2px;transition:border-color 0.2s;">The House Tuscaloosa</a></div>
+        <p class="grant-desc">The House Tuscaloosa is a literacy center, community bookstore, and safe haven for young people. Founded six years ago, it has partnered with the Blackburn Institute on a middle and high school book club, participated in the annual Tuscaloosa City Schools "Battle of the Books," and developed a beloved afterschool program for middle schoolers.</p>
+        <p class="grant-desc" style="margin-top:-8px;">When federal funding was frozen following an executive order in early 2025, The House faced an immediate gap. Our community voted to make them our first recipient — directing $4,200 toward sustaining their programs and keeping their doors open and accessible.</p>
+        <span class="grant-tag">Literacy &amp; Education</span>
+        <span class="grant-tag">Youth Programming</span>
+        <span class="grant-tag">Community Access</span>
+      </div>
+    </div>
+    <div class="grant-note">
+      <p>TP1K's grant recipients are chosen democratically by every attendee at our community giving events — students, faculty, business leaders, and neighbors alike. Future awards will be announced following each gathering. The community decides.</p>
+    </div>
+  </div>
+
+
+  <!-- ── Ready to Give ── -->
+  <div class="how-to-give-section">
+    <div class="how-to-give-inner">
+      <div>
+        <h2 class="how-to-give-heading reveal">Ready to<br><span>Contribute?</span></h2>
+        <p class="how-to-give-sub">Contributions made outside of a TP1K event serve as matching funds during our next gathering — and every dollar is always directed toward the greatest community need. Want a direct say in where your money goes? Join us at an event.</p>
+      </div>
+      <div>
+        <ol class="how-to-give-steps">
+          <li class="how-to-give-step">
+            <div class="step-num">1</div>
+            <div class="step-text">Visit <strong><a href="https://donorbox.org/support-cfwa" target="_blank" style="color:var(--sky);">donorbox.org/support-cfwa</a></strong> — or click <strong>Donate</strong> above</div>
+          </li>
+          <li class="how-to-give-step">
+            <div class="step-num">2</div>
+            <div class="step-text">Enter your donation amount and payment info</div>
+          </li>
+          <li class="how-to-give-step">
+            <div class="step-num">3</div>
+            <div class="step-text">In the <strong style="color:var(--sky);">“Write us a comment”</strong> field, type: <strong style="color:white;">Tuscaloosa Premier 1000</strong></div>
+          </li>
+          <li class="how-to-give-step">
+            <div class="step-num">4</div>
+            <div class="step-text">Submit — you’ll receive a tax-deductible receipt from CFWA</div>
+          </li>
+        </ol>
+        <a href="#" onclick="openDonateModal();return false;" class="how-to-give-cta">Give Now →</a>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /grants -->
+
+
+<!-- ═══════════ MEDIA ═══════════ -->
+<div id="page-media" class="page">
+
+  <div class="page-header">
+    <div class="ph-eyebrow"><span style="width:26px;height:2px;background:var(--accent);display:block;"></span>Media</div>
+    <h1>In the Community,<br><span>In the News.</span></h1>
+    <p>Photos, press coverage, and stories from our growing circle of givers.</p>
+  </div>
+
+  <div class="media-section">
+
+    <div class="section-eyebrow">Event Gallery</div>
+    <h2 class="section-title">Photos</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item featured">
+        <img src="assets/image_jpg_003.jpg" alt="Co-Director Zach Goldman addresses the room at the inaugural TP1K giving event">
+      </div>
+      <div class="gallery-item">
+        <img src="assets/image_jpg_004.jpg" alt="Zach Goldman and Raeed Kabir with The Giving Effect feature article">
+      </div>
+      <div class="gallery-item">
+        <img src="assets/image_jpg_005.jpg" alt="TP1K team and community members at the inaugural giving event">
+      </div>
+      <div class="gallery-item">
+        <img src="assets/image_jpg_006.jpg" alt="CFWA partner and co-director presenting at the event">
+      </div>
+      <div class="gallery-item">
+        <img src="assets/image_jpg_007.jpg" alt="Raeed Kabir leading a community discussion at the whiteboard">
+      </div>
+      <div class="gallery-item">
+        <img src="assets/image_jpg_008.jpg" alt="Raeed Kabir addressing community members">
+      </div>
+      <div class="gallery-item">
+        <img src="assets/image_jpg_009.jpg" alt="Community leader speaking at the TP1K event">
+      </div>
+      <div class="gallery-item">
+        <img src="assets/image_jpg_010.jpg" alt="Nonprofit representative presenting to the giving circle">
+      </div>
+      <div class="gallery-item">
+        <img src="assets/image_jpg_011.jpg" alt="Attendees listening to nonprofit presentations">
+      </div>
+      <div class="gallery-item">
+        <img src="assets/image_jpg_012.jpg" alt="Name cards for inaugural TP1K giving circle event">
+      </div>
+      <div class="gallery-item">
+        <img src="assets/image_jpg_013.jpg" alt="The venue set up for the Love Tuscaloosa giving event">
+      </div>
+      <div class="gallery-item">
+        <img src="assets/image_jpg_014.jpg" alt="Two attendees at the TP1K inaugural event">
+      </div>
+    </div>
+
+    <div class="press-section">
+      <div class="section-eyebrow">Press Coverage</div>
+      <h2 class="section-title">In the News</h2>
+      <div class="press-grid">
+
+        <div class="press-card">
+          <div class="press-source">The Crimson White · 2026</div>
+          <div class="press-headline">TP1K Makes First Community Award to The House Tuscaloosa</div>
+          <p class="press-desc">UA's student newspaper covered TP1K's inaugural community giving event and $4,200 award to The House Tuscaloosa — a literacy center and youth program whose federal funding was frozen in early 2025. Co-Director Zach Goldman spoke on impact over dollar amounts.</p>
+          <a href="https://thecrimsonwhite.com/127295/culture/tuscaloosa-premier-1000k-makes-first-community-award-to-the-house-tuscaloosa/" target="_blank" class="press-link">Read the Article</a>
+        </div>
+
+        <div class="press-card">
+          <div style="display:inline-block;background:var(--accent);color:white;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;padding:4px 10px;margin-bottom:12px;">Featured Article</div>
+          <div class="press-source">The Giving Effect · UA Dept. of Advancement · 2025</div>
+          <div class="press-headline">Embracing Community: Two Randall Scholars Start a Giving Circle Fund</div>
+          <p class="press-desc">UA's Department of Advancement featured TP1K in <em>The Giving Effect</em>, a publication distributed to 8,000 readers — tracing how a conversation in the Randall Lab became Tuscaloosa's first collegiate-led giving circle.</p>
+          <a class="press-link" href="https://pdflink.to/c4d9d674/" target="_blank">Read the Feature</a>
+        </div>
+
+        <div class="press-card">
+          <div style="display:inline-block;background:var(--navy);color:var(--sky);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;padding:4px 10px;margin-bottom:12px;">CFWA Feature</div>
+          <div class="press-source">Community Foundation of West Alabama · 2026</div>
+          <div class="press-headline">Glenn Taylor Spotlights TP1K in CFWA Community Newsletter</div>
+          <p class="press-desc">CFWA President &amp; CEO Glenn Taylor personally recognized Zach Goldman in the Foundation’s community newsletter, writing: “Thank you, Zachary Goldman, for setting a great example for our young people. When we say our mission is to encourage charitable giving, we understand that applies to all ages.”</p>
+          <a href="https://pdflink.to/5c41fc0e/" target="_blank" class="press-link">Read the Feature</a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- ── Ready to Give ── -->
+  <div class="how-to-give-section">
+    <div class="how-to-give-inner">
+      <div>
+        <h2 class="how-to-give-heading reveal">Ready to<br><span>Contribute?</span></h2>
+        <p class="how-to-give-sub">Contributions made outside of a TP1K event serve as matching funds during our next gathering — and every dollar is always directed toward the greatest community need. Want a direct say in where your money goes? Join us at an event.</p>
+      </div>
+      <div>
+        <ol class="how-to-give-steps">
+          <li class="how-to-give-step">
+            <div class="step-num">1</div>
+            <div class="step-text">Visit <strong><a href="https://donorbox.org/support-cfwa" target="_blank" style="color:var(--sky);">donorbox.org/support-cfwa</a></strong> — or click <strong>Donate</strong> above</div>
+          </li>
+          <li class="how-to-give-step">
+            <div class="step-num">2</div>
+            <div class="step-text">Enter your donation amount and payment info</div>
+          </li>
+          <li class="how-to-give-step">
+            <div class="step-num">3</div>
+            <div class="step-text">In the <strong style="color:var(--sky);">“Write us a comment”</strong> field, type: <strong style="color:white;">Tuscaloosa Premier 1000</strong></div>
+          </li>
+          <li class="how-to-give-step">
+            <div class="step-num">4</div>
+            <div class="step-text">Submit — you’ll receive a tax-deductible receipt from CFWA</div>
+          </li>
+        </ol>
+        <a href="#" onclick="openDonateModal();return false;" class="how-to-give-cta">Give Now →</a>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /media -->
+
+
+<!-- ═══════════ FAQ ═══════════ -->
+<div id="page-faq" class="page">
+
+  <div class="page-header">
+    <div class="ph-eyebrow"><span style="width:26px;height:2px;background:var(--accent);display:block;"></span>FAQ</div>
+    <h1>Frequently<br><span>Asked Questions</span></h1>
+    <p>Everything you need to know about how TP1K works.</p>
+  </div>
+
+  <div class="faq-section">
+    <div class="faq-two-col">
+      <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-text">What is the Tuscaloosa Premier 1,000?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          Tuscaloosa Premier 1,000 (TP1K) is a giving circle based in Tuscaloosa, Alabama. We bring students, faculty, staff, and community leaders together to hear from local nonprofits, pool our resources, and collectively decide where that money goes. Every event is a community conversation — about needs, values, and what Tuscaloosa deserves. The goal is to make philanthropy accessible, democratic, and genuinely impactful for everyone at the table.
+        </div></div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-1">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-text">What does "1,000" mean?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          It represents a community goal: 1,000 people united in a shared commitment to Tuscaloosa's growth. We want to build a circle of 1,000 individuals — students, educators, business owners, neighbors — who believe collective action is more powerful than individual charity. There's no membership fee, no minimum gift, and no barrier to participation. If you care about Tuscaloosa, you belong here.
+        </div></div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-2">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-text">How do I donate?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          All donations are processed securely through the <strong>Community Foundation of West Alabama (CFWA)</strong>, our fiscal partner. Here's exactly how to give:
+          <ol style="margin:16px 0 16px 20px;display:flex;flex-direction:column;gap:10px;font-size:15px;">
+            <li>Go to <a href="https://donorbox.org/support-cfwa" target="_blank"><strong>donorbox.org/support-cfwa</strong></a> — or click the <strong>Donate</strong> button at the top of this site</li>
+            <li>Enter your desired donation amount and complete your payment information</li>
+            <li>In the <strong>"Write us a comment"</strong> field, type: <strong>Tuscaloosa Premier 1000</strong></li>
+            <li>Submit — you'll receive a tax-deductible receipt from CFWA</li>
+          </ol>
+          Every dollar goes directly toward Tuscaloosa nonprofits chosen by our community. Questions? Email us at <a href="/cdn-cgi/l/email-protection#1b617a7c74777f767a755b78697276687475356e7a357e7f6e"><span class="__cf_email__" data-cfemail="037962646c6f676e626d4360716a6e706c6d2d76622d666776">[email&#160;protected]</span></a>.
+        </div></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-text">How much should I give?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          Whatever feels right to you — truly. We believe in open, unrestricted giving because philanthropy should feel accessible, not transactional. Your presence, perspective, and engagement matter just as much as any financial contribution. The spirit of TP1K is that everyone who shows up is contributing something meaningful.
+        </div></div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-1">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-text">How are nonprofits selected?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          At each TP1K event, we invite a curated group of local nonprofit leaders to present their work directly to the community — organizations addressing Tuscaloosa's most pressing needs across different areas of civic life. After hearing from them, everyone in attendance votes on which organization to support that cycle. The whole community decides where the money goes.
+        </div></div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-2">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Who can participate?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          Anyone. University of Alabama students, faculty, and staff are our core community, but TP1K is open to all — business owners, neighbors, community leaders, anyone who cares about Tuscaloosa. We have held events with University officials, nonprofit directors, and first-time volunteers in the same room. That diversity of perspective is exactly the point.
+        </div></div>
+      </div>
+
+      </div>
+      <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Is my donation tax-deductible?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          Yes. Because TP1K operates through the Community Foundation of West Alabama — a 501(c)(3) public charity — all donations are fully tax-deductible to the extent permitted by law. You will receive documentation from CFWA for your records.
+        </div></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-text">How much of my donation actually reaches the cause?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          Nearly 100% of every donation goes directly to the nonprofit chosen by our community. The only administrative fees are collected by the Community Foundation of West Alabama — our fiscal partner — and amount to less than 0.5% of each gift. TP1K itself charges no fees, takes no cut, and has no administrative overhead of its own.
+        </div></div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-1">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-text">What is the Community Foundation of West Alabama?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          The Community Foundation of West Alabama (CFWA) is TP1K's fiscal and administrative partner. Founded in 1999, CFWA is a public charity that manages permanent charitable funds for individuals and organizations throughout West Alabama. It holds a four-star Charity Navigator rating. By partnering with CFWA, TP1K ensures your donations are handled with full accountability and transparency while we focus on building community.
+        </div></div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-2">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-text">How can nonprofits apply to be considered?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          We are always looking to connect with nonprofits doing meaningful work in the Tuscaloosa area. If your organization would like to present at a future TP1K event, please reach out directly at <a href="/cdn-cgi/l/email-protection#0973686e66656d646867496a7b60647a6667277c68276c6d7c"><span class="__cf_email__" data-cfemail="4832292f27242c252926082b3a21253b2726663d29662d2c3d">[email&#160;protected]</span></a> or <a href="/cdn-cgi/l/email-protection#7a081b111b1813083a19081317091514540f1b541f1e0f"><span class="__cf_email__" data-cfemail="4c3e2d272d2e253e0c2f3e25213f232262392d62292839">[email&#160;protected]</span></a>. We prioritize organizations addressing community needs where flexible, pooled funding can make a tangible difference.
+        </div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-text">When and where do TP1K events happen?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          We hold one major fundraising event per year, supplemented by community-engagement opportunities throughout — tours of nonprofits we've supported, monthly spotlights on members and causes, and informal gatherings. We intentionally hold events at unique spaces around Tuscaloosa, not just on campus. A big part of our mission is getting UA students genuinely connected to the city, so you might find us at a local restaurant, a community art space, or a neighborhood venue with its own Tuscaloosa story.
+        </div></div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-1">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Can businesses or organizations donate, not just individuals?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          Yes — we welcome contributions from businesses, university departments, civic organizations, and community groups. Institutional gifts go through the same secure CFWA channel, and we offer different forms of recognition for organizational donors. If your organization is interested in partnering with or sponsoring TP1K, reach out to any of our co-directors to start the conversation.
+        </div></div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-2">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-text">What happens to my donation if an event is postponed?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          Your gift is held securely by the Community Foundation of West Alabama and rolls over to the next event — which we schedule promptly and always with a confirmed backup date. We would never postpone without giving members a new date immediately. Your money is safe with CFWA, always tax-deductible, and always earmarked for Tuscaloosa nonprofits.
+        </div></div>
+      </div>
+
+      </div>
+    </div>
+  </div>
+
+
+</div><!-- /faq -->
+
+
+<!-- ═══════════ GET INVOLVED ═══════════ -->
+<div id="page-involve" class="page">
+
+  <div class="page-header">
+    <div class="ph-eyebrow"><span style="width:26px;height:2px;background:var(--accent);display:block;"></span>Get Involved</div>
+    <h1>Join the<br><span>Circle</span></h1>
+    <p>There's a place for you here — no matter what you bring to the table.</p>
+  </div>
+
+  <!-- ── Contact (merged) ── -->
+  <div style="background:var(--navy); padding:56px 80px 48px; border-top:4px solid var(--accent);">
+    <div style="max-width:900px;margin:0 auto;">
+    <div class="contact-partner" style="margin-top:0;">
+      <div>
+        <h3>Partnership &amp;<br>Sponsorship<br>Inquiries</h3>
+      </div>
+      <div>
+        <p>Are you a business, university department, or civic organization interested in partnering with TP1K to help shape Tuscaloosa's next generation of philanthropic leaders? We welcome co-sponsorship of events, mentorship of our student directors, donor matching, and other collaborative arrangements. Reach out to any of our co-directors to start the conversation — or connect with us through the Community Foundation of West Alabama.</p>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="involve-section">
+    <div class="involve-grid">
+
+      <div class="involve-prose">
+        <div class="section-eyebrow">Why Join</div>
+        <p>TP1K isn't a membership organization with dues or tiers. It's a community of people who care about Tuscaloosa — and who believe that showing up, listening, and contributing what you can actually changes things. The conversation is the point. A dollar and a voice carry equal weight in the room.</p>
+
+        <p>We especially welcome first-time philanthropists and anyone who has ever thought “I wish I could do more.” You can — and you don’t need wealth or experience to start. Research shows the most consistent donors are people who gave for the first time when they were young. We are here to be that first step.</p>
+        <p><strong>Attendance at our giving events is by personal invitation.</strong> We reach out to people whose work in the community we admire — because we want everyone at the table to know they were chosen to be there. If you haven’t received an invitation yet, join our mailing list. We’ll reach out when we think you’d be a great fit.</p>
+        <p>Contributions made through our website or outside of a live event are used as <strong>matching donations</strong> during our next gathering — amplifying the collective impact of the room. Every dollar is always directed toward the greatest need identified by our community. If you want a direct voice in where your contribution goes, we encourage you to reach out about attending an upcoming event and joining the conversation in person.</p>
+        <div style="margin-top:40px;background:var(--navy);padding:36px;color:white;">
+          <blockquote style="font-family:'Lora',serif;font-style:italic;font-size:18px;line-height:1.72;color:rgba(255,255,255,0.85);margin-bottom:16px;">
+            "This is a great opportunity for students who are active, involved, and passionate."
+          </blockquote>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);">— Zach Goldman</div>
+        </div>
+      </div>
+
+      <div class="involve-form">
+        <h3>Join Our Mailing List</h3>
+        <p style="font-size:15px;line-height:1.7;color:var(--text-muted);margin-bottom:32px;">Fill out our short form to get on the TP1K mailing list. We’ll be in touch about upcoming events, grant cycles, and ways to get involved.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd0Bl19fDzMmYv5BVLOD-f0S4g9Qnt8IaTi4h0XeWB8MGzzKA/viewform?usp=publish-editor" target="_blank" class="btn-primary" style="display:block;text-align:center;text-decoration:none;padding:18px 24px;font-size:16px;">Join the Circle &rarr;</a>
+        <p class="form-note" style="margin-top:20px;">You’ll be taken to a short Google Form. We’ll only reach out about TP1K updates — never spam.</p>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ── Ready to Give ── -->
+  <div class="how-to-give-section">
+    <div class="how-to-give-inner">
+      <div>
+        <h2 class="how-to-give-heading reveal">Ready to<br><span>Contribute?</span></h2>
+        <p class="how-to-give-sub">Contributions made outside of a TP1K event serve as matching funds during our next gathering — and every dollar is always directed toward the greatest community need. Want a direct say in where your money goes? Join us at an event.</p>
+      </div>
+      <div>
+        <ol class="how-to-give-steps">
+          <li class="how-to-give-step">
+            <div class="step-num">1</div>
+            <div class="step-text">Visit <strong><a href="https://donorbox.org/support-cfwa" target="_blank" style="color:var(--sky);">donorbox.org/support-cfwa</a></strong> — or click <strong>Donate</strong> above</div>
+          </li>
+          <li class="how-to-give-step">
+            <div class="step-num">2</div>
+            <div class="step-text">Enter your donation amount and payment info</div>
+          </li>
+          <li class="how-to-give-step">
+            <div class="step-num">3</div>
+            <div class="step-text">In the <strong style="color:var(--sky);">“Write us a comment”</strong> field, type: <strong style="color:white;">Tuscaloosa Premier 1000</strong></div>
+          </li>
+          <li class="how-to-give-step">
+            <div class="step-num">4</div>
+            <div class="step-text">Submit — you’ll receive a tax-deductible receipt from CFWA</div>
+          </li>
+        </ol>
+        <a href="#" onclick="openDonateModal();return false;" class="how-to-give-cta">Give Now →</a>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /involve -->
+
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <!-- Footer logo -->
+      <div onclick="showPage('home')" style="cursor:pointer;width:160px;margin-bottom:16px;">
+        <img src="assets/image_png_001.png" alt="TP1K — Inspiring Philanthropy" style="width:100%;height:auto;display:block;">
+      </div>
+      <p>A collegiate-led giving circle dedicated to inspiring philanthropy in Tuscaloosa, Alabama. Created in partnership with the Community Foundation of West Alabama.</p>
+    </div>
+    <div>
+      <div class="footer-nav-title">Navigate</div>
+      <ul class="footer-nav-links">
+        <li><a onclick="showPage('home')">Home</a></li>
+        <li><a onclick="showPage('about')">About</a></li>
+<li><a onclick="showPage('grants')">Grants</a></li>
+        <li><a onclick="showPage('media')">Media</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-nav-title">Connect</div>
+      <ul class="footer-nav-links">
+        <li><a onclick="showPage('faq')">FAQ</a></li>
+<li><a onclick="showPage('involve')">Get Involved</a></li>
+        <li><a href="https://donorbox.org/support-cfwa" target="_blank">Donate →</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Tuscaloosa Premier 1,000 · Fund administered by <a href="https://www.thecfwa.org/" target="_blank">Community Foundation of West Alabama</a></p>
+    <p>Tuscaloosa, AL</p>
+  </div>
+</footer>
+
+
+
+<!-- ═══════════ DONATE MODAL ═══════════ -->
+<div class="donate-modal-overlay" id="donateModal" onclick="closeDonateModal(event)">
+  <div class="donate-modal" role="dialog" aria-modal="true">
+    <button class="donate-modal-close" onclick="closeDonateModal()" aria-label="Close">×</button>
+    <h2>How to Give</h2>
+    <p class="modal-sub">All donations are processed securely through the Community Foundation of West Alabama. Follow these steps to ensure your gift reaches TP1K.</p>
+    <p style="font-size:13px;color:var(--accent);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:24px;">Nearly 100% goes directly to the cause — CFWA administrative fees are &lt;0.5%.</p>
+    <ol class="modal-steps">
+      <li class="modal-step">
+        <div class="modal-step-num">1</div>
+        <div class="modal-step-text">Click the button below to go to <strong>donorbox.org/support-cfwa</strong></div>
+      </li>
+      <li class="modal-step">
+        <div class="modal-step-num">2</div>
+        <div class="modal-step-text">Enter your desired amount and complete your payment information</div>
+      </li>
+      <li class="modal-step">
+        <div class="modal-step-num">3</div>
+        <div class="modal-step-text">In the <strong>"Write us a comment"</strong> field, type exactly: <strong>Tuscaloosa Premier 1000</strong><br><span style="font-size:13px;color:var(--text-muted);">This is required to direct your gift to TP1K's fund.</span>
