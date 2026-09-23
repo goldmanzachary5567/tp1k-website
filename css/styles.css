@@ -267,8 +267,8 @@
     .press-link::after { content:'→'; }
     .press-link:hover { color:var(--accent); }
     .press-link.disabled { opacity:0.4; cursor:default; pointer-events:none; }
-    .award-card { display:grid; grid-template-columns:220px 1fr; gap:28px; align-items:center; }
-    .award-card img { width:100%; height:100%; min-height:160px; object-fit:cover; }
+    .award-card { display:grid; grid-template-columns:140px 1fr; gap:28px; align-items:center; }
+    .award-card img { width:100%; height:100%; min-height:110px; object-fit:cover; }
 
     /* ── FAQ PAGE ── */
     .faq-section { background:var(--bg); padding:80px; }
